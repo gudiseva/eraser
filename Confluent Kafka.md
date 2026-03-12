@@ -55,6 +55,20 @@ Log **compaction**: keep only the latest value per key
 - Data retention by default is 7 days.  It can be retained forever.
 
 
+## Partitions
+Opensouce Apache Kafka 4.0 can support upto 2 million partitions
+
+
+
+![Strict Ordering](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---XsnEPhAQa0bOs4bvE6MPW---id---RXqF_m1GJqOmx6fbAFVwo.png "Strict Ordering")
+
+
+
+## Brokers
+TBD
+
+
+
 
 
 
