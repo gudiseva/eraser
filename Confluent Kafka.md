@@ -60,14 +60,14 @@ Opensouce Apache Kafka 4.0 can support upto 2 million partitions
 
 
 
-![Strict Ordering](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---r8HtKUMCXfJ_dqYALnTYK---id---RXqF_m1GJqOmx6fbAFVwo.png "Strict Ordering")
+![Strict Ordering](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---ekj_soeKaDBXuxMkqUSsU---id---RXqF_m1GJqOmx6fbAFVwo.png "Strict Ordering")
 
 
 
 ## Brokers
 - Kafka Cluster has brokers
 - Brokers host Partitions
-![Brokers host partitions](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---AOMKhgrN90sSCam25QPC4---id---Dzw8DoSyDgvqxoepRVIF5.png "Brokers host partitions")
+![Brokers host partitions](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---NECWwZS_5cJudND-hzfzn---id---Dzw8DoSyDgvqxoepRVIF5.png "Brokers host partitions")
 
 
 
@@ -76,6 +76,33 @@ Opensouce Apache Kafka 4.0 can support upto 2 million partitions
 
 ## Replication
 TBD
+
+
+
+## Producers
+TBD
+
+
+
+## Consumers
+TBD
+
+
+
+## Confluent Schema Registry
+TBD
+
+
+
+## Kafka Connect
+TBD
+
+
+
+## Stream Processing
+TBD
+
+
 
 
 
