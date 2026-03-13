@@ -60,11 +60,21 @@ Opensouce Apache Kafka 4.0 can support upto 2 million partitions
 
 
 
-![Strict Ordering](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---XsnEPhAQa0bOs4bvE6MPW---id---RXqF_m1GJqOmx6fbAFVwo.png "Strict Ordering")
+![Strict Ordering](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---r8HtKUMCXfJ_dqYALnTYK---id---RXqF_m1GJqOmx6fbAFVwo.png "Strict Ordering")
 
 
 
 ## Brokers
+- Kafka Cluster has brokers
+- Brokers host Partitions
+![Brokers host partitions](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---AOMKhgrN90sSCam25QPC4---id---Dzw8DoSyDgvqxoepRVIF5.png "Brokers host partitions")
+
+
+
+- As of Apache Kafka 4.0, Zookeeper is no longer included to store the Metadata.  Instead KRaft is shipped.
+
+
+## Replication
 TBD
 
 
