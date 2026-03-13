@@ -60,14 +60,14 @@ Opensouce Apache Kafka 4.0 can support upto 2 million partitions
 
 
 
-![Strict Ordering](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---ekj_soeKaDBXuxMkqUSsU---id---RXqF_m1GJqOmx6fbAFVwo.png "Strict Ordering")
+![Strict Ordering](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---n2NqdXuQJAWr-fFrhIk6k---id---RXqF_m1GJqOmx6fbAFVwo.png "Strict Ordering")
 
 
 
 ## Brokers
 - Kafka Cluster has brokers
 - Brokers host Partitions
-![Brokers host partitions](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---NECWwZS_5cJudND-hzfzn---id---Dzw8DoSyDgvqxoepRVIF5.png "Brokers host partitions")
+![Brokers host partitions](/.eraser/ELrUkD3XiECyUNC22bZw___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---figure---_0RJHp-wh7Vebolhk-T71---id---Dzw8DoSyDgvqxoepRVIF5.png "Brokers host partitions")
 
 
 
@@ -75,8 +75,10 @@ Opensouce Apache Kafka 4.0 can support upto 2 million partitions
 
 
 ## Replication
-TBD
-
+- Clients always writes to the **Leader Replica**
+- Clients can read from the **Follower Replica**
+- If a Broker containing Lead Partition is down, then the Leader is elected from the remaining replicas.
+- TBD
 
 
 ## Producers
