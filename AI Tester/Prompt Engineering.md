@@ -177,7 +177,23 @@ E - Expectation
 - Used for Bug creation
 
 
+### 3. COAST
+C - Context
 
+O - Objective
+
+A - Action
+
+S - Style
+
+T - Tone
+
+
+
+### 4. CLASSIC "Role Model Prompting"
+"You are X, behave like Y, produce Z."
+
+Feels like assigning an actor their script.
 
 
 
