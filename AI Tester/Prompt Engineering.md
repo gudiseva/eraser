@@ -126,15 +126,56 @@ TASK: [Specific instruction]
 #### T - Tone
 
 
-Quick Checklist for Good Prompt
+---
+
+## Quick Checklist for Good Prompt
+- [ ] Goal is clearly defined
+- [ ] All relevant context is included
+- [ ] Approprite strategy is chosen
+- [ ] Prompt is well-structured
+- [ ] Anti-hallucination constraints added
+- [ ] Output format specified
+- [ ] Task instruction is specific
+
+
+## Common Mistakes to Avoid
+| Mistake | Impact | Fix |
+| ----- | ----- | ----- |
+| Skipping context | Poor, generic output | Gather all docs first |
+| No constraints | Hallucinations | Add anti-hallucination rules |
+| Vague task | Inconsistent results | Be specific |
+| No format | Unstructured output | Specify format |
+| No iteration | Suboptimal results | Test and refine |
+
+
+## Prompt Frameworks: STAR, CLEAR, CRISP
+- These are small frameworks that are simple and can be used anywhere.
+
+
+### 1. CRAP / CRISP Framework
+C - Context
+
+R - Role
+
+A - Action
+
+I - Instruction
+
+P - Parameters (optional)
 
 
 
-Common Mistakes to Avoid
+### 2. RACE
+R - Role
 
+A - Action
 
+C - Context
 
-Prompt Frameworks: STAR, CLEAR, CRISP
+E - Expectation
+
+- Used for Bug creation
+
 
 
 
