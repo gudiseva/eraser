@@ -17,6 +17,129 @@ To get the best result from LLM, the following are required:
 - You are **NOT** asking AI.  You are **INSTRUCTING** AI.
 
 
+### Core Principals
+1. Be Specific
+2. Provide Context
+3. Define Output Format (desired output)
+4. Set Constraints - use only the document (PRD) provided
+
+
+
+
+## 7 Step formula for effective Prompt Engineering
+1. Define the Goal
+2. Gather the Context
+3. Choose Prompting Strategy
+4. Structure the Prompt
+5. Add Constraints
+6. Test and Iterate
+7. Document and Reuse
+
+
+
+
+### Step 1: Define the Goal
+Ask yourself:
+
+- What exactly do I need?
+- What will I do with the output?
+- What does success look like?
+
+
+> Plan -> Generate (AI) - BLAST - RULE 1 - (95% Plan, 5% Action)
+
+
+
+### Step 2: Gather Context
+- [ ] Collect all relevant information:
+- [ ] PRD / Requirements document
+- [ ] API documentation
+- [ ] Screenshots / UI mockups
+- [ ] Error logs
+- [ ] Previous test cases
+- [ ] Constraints / Limitations
+- [ ] JIRA ID, Storeis, Epic, BRD, Confluence, Wireframes, Figma design, Architecture Diagrams, Miro Reports, etc.
+**Rule**: More context = Better output
+
+
+
+### Step 3: Choose Prompting Strategy
+
+
+| Situation | Strategy |  |
+| ----- | ----- | ----- |
+| Simple, standard task | Zero-Shot | No Example |
+| Custom format needed | Few-Shot | 2-3 Examples |
+| Complex analysis | Chain-of-Thought | Ask him to think about it |
+| Domain expertise needed | Role-Based | Act as QA |
+
+
+## Step 4: Structure the Prompt
+Use a framework (**RICE POT** recommended):
+
+```
+ROLE: [EXPERTISE]
+Instructions: [Purpose]
+CONTEXT: [Background info]
+EXPECTED: [Success criteria]
+PARAMETERS: [Constraints]
+OUTPUT: [Format]
+TASK: [Specific instruction]
+```
+
+
+#### Task: Write a Selenium Cde for the Sales Force Login
+> RICE POT to create the Selenium Code for the Salesforce Login
+
+
+
+#### R
+#### I
+[XXX] <- It is a direct instruction to the LLM
+
+[Critical]
+
+[Mandatory]
+
+[Output]
+
+[Don't]
+
+[Generate]
+
+[Don't Use]
+
+
+
+#### C - Context
+
+
+#### E - Example
+
+
+#### P - Parameters
+
+
+#### O - Output
+
+
+#### T - Tone
+
+
+Quick Checklist for Good Prompt
+
+
+
+Common Mistakes to Avoid
+
+
+
+Prompt Frameworks: STAR, CLEAR, CRISP
+
+
+
+
+
 
 
 <!--- Eraser file: https://app.eraser.io/workspace/ZYXrOK8MpdU5rBIHgaXt --->
