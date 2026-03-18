@@ -197,6 +197,29 @@ Feels like assigning an actor their script.
 
 
 
+## Checklist: Is Your Prompt Complete?
+- [ ] Role defined
+- [ ] Context is provided
+- [ ] Task is specifi and quantified
+- [ ] Constraints prevent hallucinations, conditions
+- [ ] Output format specified
+- [ ] Terminology defined, if needed
+
+
+## Prompts Templates (templates/)
+**Purpose**: Ready to use prompt templates for test case generation
+
+**Chapter**: 2 - Prompt Engineering
+
+
+
+### Template 1: Basic Test Case Generation (RTCFR)
+
+
+
+
+
+
 
 
 <!--- Eraser file: https://app.eraser.io/workspace/ZYXrOK8MpdU5rBIHgaXt --->
