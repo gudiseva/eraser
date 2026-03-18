@@ -214,11 +214,20 @@ Feels like assigning an actor their script.
 
 
 ### Template 1: Basic Test Case Generation (RTCFR)
+ROLE - You are a Senior QA Engineer.
+
+TASK - Generate [NUMBER] test cases for [FEATURE].
+
+CONSTRAINTS
+
+- Use ONLY the provided requirements <- This will ensure that it will not do hallucination
+- Do NOT assume undocumented behaviour
+- If information is missing, state "Not specified"
 
 
+FORMAT:
 
-
-
+| Test ID | Description | Pre-conditions | Steps | Expected Result | Priority |
 
 
 
