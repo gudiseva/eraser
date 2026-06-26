@@ -2,6 +2,16 @@
 
 
 
+# Interview Topics (as provided by client)
+- [ ] Rest API call
+- [ ] Java 21 features
+- [ ] Sql indexes, methods to get fast retrievals
+- [ ] Functional interface
+- [ ] Hashmap working
+- [ ] Data structure
+- [ ] Class and objects
+
+
 # **Phase 1: Java 8 (1 week)**
 This is the most important jump.
 
