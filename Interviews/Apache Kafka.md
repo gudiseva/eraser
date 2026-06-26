@@ -21,11 +21,10 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 2. **Multiple independent consumers** — each group has its own offset; fan-out is free.
 3. **Horizontal scale via partitioning** — throughput scales with partition count, not vertically.
 ### Diagram — Kafka as a decoupling hub
-![Kafka 1 — Topic anatomy: Kafka 4 — Decoupling hub](undefined "Kafka 1 — Topic anatomy: Kafka 4 — Decoupling hub")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---jaCE5lHc0dxxnYWS7u0Gh---id---QQ5_--YNwptll-Ge6hNZA.png "Flowchart")
 
-```
 
-```
+
 ---
 
 ## 2. Core abstractions
@@ -42,11 +41,10 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 **The single most important sentence:** _ordering is per-partition, and the key determines the partition._ Almost every Kafka design question reduces to choosing the key so related events land on the same partition (and stay ordered) while still spreading load.
 
 ### Diagram — Anatomy of a topic
-![Kafka 1 — Topic anatomy: Kafka 1 — Topic anatomy](undefined "Kafka 1 — Topic anatomy: Kafka 1 — Topic anatomy")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---kXZ-vhmDSM3M81v6zO3Je---id---ElZYTgUDaNfTaiL5BUuF2.png "Flowchart")
 
-```
 
-```
+
 ---
 
 ## 3. Architecture and the cluster
@@ -61,11 +59,10 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 **Write path.** Producer → partition leader appends to its log → ISR followers fetch and append → once enough replicas acknowledge (governed by `acks`), the write is committed. Kafka leans on the OS page cache, sequential disk I/O, and zero-copy reads (`sendfile`) for throughput.
 
 ### Diagram — Replication and ISR
-![Kafka 1 — Topic anatomy: Kafka 3 — Replication and ISR](undefined "Kafka 1 — Topic anatomy: Kafka 3 — Replication and ISR")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---cEXk2dM4eO7yPcINBp-2B---id---abUDccUeSmrp-nS11pKjz.png "Flowchart")
 
-```
 
-```
+
 ---
 
 ## 4. The producer
@@ -94,11 +91,10 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 **Consumer lag** = log-end-offset − committed-offset. The key health metric — rising lag means consumers can't keep up.
 
 ### Diagram — Consumer group assignment
-![Kafka 1 — Topic anatomy: Kafka 2 — Consumer group assignment](undefined "Kafka 1 — Topic anatomy: Kafka 2 — Consumer group assignment")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---mDWtKleUDppo5T06zMXr2---id---gCtZKMHZ7I7eqt_tdYP50.png "Flowchart")
 
-```
 
-```
+
 A second group (say "analytics") would read the same partitions with its own independent offsets — free fan-out.
 
 ---
@@ -110,11 +106,10 @@ The guarantee is decided by **when you commit the offset relative to processing*
 - **At-least-once** — commit _after_ processing. Crash in between → reprocessed on restart. Never loses; may duplicate. _The practical default._
 - **Exactly-once** — wrap process-and-commit in one transaction (+ idempotent producer). No loss, no duplicates, **within Kafka**. For external systems, achieve effectively-once via idempotent/upsert writes on a key.
 ### Diagram — Delivery semantics
-![Kafka 1 — Topic anatomy: Kafka 5 — Delivery semantics (commit order)](undefined "Kafka 1 — Topic anatomy: Kafka 5 — Delivery semantics (commit order)")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---i4B8ndy1l2D1lSP54iW26---id---u0MKXVGcXLVC2utDFu-ju.png "Flowchart")
 
-```
 
-```
+
 ---
 
 ## 7. Retention and compaction — events vs state
@@ -125,11 +120,10 @@ The guarantee is decided by **when you commit the offset relative to processing*
 The architect payoff: a compacted topic is effectively an event-sourced table you can replay to rebuild state — the foundation of CDC pipelines and Kafka Streams state stores. Logs are split into **segments**; retention and compaction operate at segment granularity.
 
 ### Diagram — Retention vs compaction
-![Kafka 1 — Topic anatomy: Kafka 6 — Retention vs compaction](undefined "Kafka 1 — Topic anatomy: Kafka 6 — Retention vs compaction")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---rPNwmfNlQVM0tU3obxFEf---id---0n5c1O-tLBplv6cWn5wsW.png "Flowchart")
 
-```
 
-```
+
 ---
 
 ## 8. Kafka Connect — the integration architect's tool
@@ -234,10 +228,5 @@ Apache Kafka is a highy scalable, and distributed platform for creating and proc
 Publisher -> Broker -> Subscriber / Consumer
 
 
-<!-- eraser-additional-content -->
-## Diagrams
-<!-- eraser-additional-files -->
-<a href="/Interviews/Apache Kafka-flowchart-1.eraserdiagram" data-element-id="zbtCBImcyKTmAZ3t3gPGK"><img src="/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram----cbb7b7414716469520282e6ae283c401.png" alt="" data-element-id="zbtCBImcyKTmAZ3t3gPGK" /></a>
-<!-- end-eraser-additional-files -->
-<!-- end-eraser-additional-content -->
+
 <!--- Eraser file: https://app.eraser.io/workspace/y36760BTrcmtGcY8YCP9 --->
