@@ -21,7 +21,7 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 2. **Multiple independent consumers** — each group has its own offset; fan-out is free.
 3. **Horizontal scale via partitioning** — throughput scales with partition count, not vertically.
 ### Diagram — Kafka as a decoupling hub
-![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---r4_ITlERmrebxyN0q0YyD---id---QQ5_--YNwptll-Ge6hNZA.png "Flowchart")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---NiWBRZvfrdxwijMB5GhYR---id---QQ5_--YNwptll-Ge6hNZA.png "Flowchart")
 
 
 
@@ -43,7 +43,7 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 **The single most important sentence:** _ordering is per-partition, and the key determines the partition._ Almost every Kafka design question reduces to choosing the key so related events land on the same partition (and stay ordered) while still spreading load.
 
 ### Diagram — Anatomy of a topic
-![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---e1XahVB6a3ovMP7mZFYjs---id---ElZYTgUDaNfTaiL5BUuF2.png "Flowchart")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---6dMVsHt_y955WUKtGVK75---id---ElZYTgUDaNfTaiL5BUuF2.png "Flowchart")
 
 
 
@@ -61,7 +61,7 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 **Write path.** Producer → partition leader appends to its log → ISR followers fetch and append → once enough replicas acknowledge (governed by `acks`), the write is committed. Kafka leans on the OS page cache, sequential disk I/O, and zero-copy reads (`sendfile`) for throughput.
 
 ### Diagram — Replication and ISR
-![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---aKcwB063TyOEP7eR_J7RT---id---abUDccUeSmrp-nS11pKjz.png "Flowchart")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---Ng3iRDLfKiP7K7VD7Vo8b---id---abUDccUeSmrp-nS11pKjz.png "Flowchart")
 
 
 
@@ -75,6 +75,8 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 - `acks=0`  — fire and forget. Lowest latency, possible loss (metrics).
 - `acks=1`  — leader acknowledges before replication. Loss possible if leader dies before followers catch up.
 - `acks=all`  (`-1` ) — leader waits for all ISR. Strongest durability. Pair with `min.insync.replicas=2`  (on RF=3) so a write fails rather than silently under-replicating.
+
+
 **Idempotent producer** (`enable.idempotence=true`): producer ID + per-partition sequence numbers make retries safe (no duplicates). Default in current versions; prerequisite for transactions.
 
 **Transactions / exactly-once (EOS):** write to multiple partitions atomically and commit consumer offsets in the same transaction (read-process-write). Real, but scoped to **within-Kafka** processing — it does not make an external DB call idempotent.
@@ -93,7 +95,7 @@ Each diagram below sits in a fenced code block tagged as Eraser diagram-as-code.
 **Consumer lag** = log-end-offset − committed-offset. The key health metric — rising lag means consumers can't keep up.
 
 ### Diagram — Consumer group assignment
-![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---n7KeQ41yY7fpKaBiJzWAK---id---gCtZKMHZ7I7eqt_tdYP50.png "Flowchart")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---AsCR7wQQu9sbMQ6U-rzdY---id---gCtZKMHZ7I7eqt_tdYP50.png "Flowchart")
 
 
 
@@ -108,7 +110,7 @@ The guarantee is decided by **when you commit the offset relative to processing*
 - **At-least-once** — commit _after_ processing. Crash in between → reprocessed on restart. Never loses; may duplicate. _The practical default._
 - **Exactly-once** — wrap process-and-commit in one transaction (+ idempotent producer). No loss, no duplicates, **within Kafka**. For external systems, achieve effectively-once via idempotent/upsert writes on a key.
 ### Diagram — Delivery semantics
-![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---ejpqZrGLjoJ-_Pnvg0HyY---id---u0MKXVGcXLVC2utDFu-ju.png "Flowchart")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---9FZ9u93G4YZZGJHlj2eim---id---u0MKXVGcXLVC2utDFu-ju.png "Flowchart")
 
 
 
@@ -122,7 +124,7 @@ The guarantee is decided by **when you commit the offset relative to processing*
 The architect payoff: a compacted topic is effectively an event-sourced table you can replay to rebuild state — the foundation of CDC pipelines and Kafka Streams state stores. Logs are split into **segments**; retention and compaction operate at segment granularity.
 
 ### Diagram — Retention vs compaction
-![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---HxQdyVsZq2Eut-ARr4uPU---id---0n5c1O-tLBplv6cWn5wsW.png "Flowchart")
+![Flowchart](/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram---yKLv-6lRP77nrANIU3Ncn---id---0n5c1O-tLBplv6cWn5wsW.png "Flowchart")
 
 
 
