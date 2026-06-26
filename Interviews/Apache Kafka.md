@@ -234,5 +234,10 @@ Apache Kafka is a highy scalable, and distributed platform for creating and proc
 Publisher -> Broker -> Subscriber / Consumer
 
 
-
+<!-- eraser-additional-content -->
+## Diagrams
+<!-- eraser-additional-files -->
+<a href="/Interviews/Apache Kafka-flowchart-1.eraserdiagram" data-element-id="zbtCBImcyKTmAZ3t3gPGK"><img src="/.eraser/y36760BTrcmtGcY8YCP9___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___---diagram----cbb7b7414716469520282e6ae283c401.png" alt="" data-element-id="zbtCBImcyKTmAZ3t3gPGK" /></a>
+<!-- end-eraser-additional-files -->
+<!-- end-eraser-additional-content -->
 <!--- Eraser file: https://app.eraser.io/workspace/y36760BTrcmtGcY8YCP9 --->
