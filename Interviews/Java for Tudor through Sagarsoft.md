@@ -76,6 +76,22 @@ FROM EMPLOYEE
  default -> "Unknown";
  };` 
 
+
+
+#### Java 7 : Switch Statement
+- Until Java 7, only Integers could be used in switch case
+
+
+#### Java 8 : Switch Statement
+- In Java 8, Strings and enums were introduced in case value
+
+
+#### Java 12 : Switch Expressions
+- You can return values from a switch block and hence switch statements became switch expresssions
+- You can have multiple values in a case label
+- You can return value from a switch expression through the arrow operator or through the "break" keyword.
+
+
 ### **Sealed Classes**
 Useful in domain modelling.
 
