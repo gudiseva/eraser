@@ -87,9 +87,15 @@ FROM EMPLOYEE
 
 
 #### Java 12 : Switch Expressions
-- You can return values from a switch block and hence switch statements became switch expresssions
-- You can have multiple values in a case label
-- You can return value from a switch expression through the arrow operator or through the "break" keyword.
+1. You can return values from a switch block and hence switch statements became switch expresssions
+2. You can have multiple values in a case label
+3. You can return value from a switch expression through the arrow operator or through the "break" keyword.
+
+
+#### Switch expression features
+> Pattern matching
+Null cases
+
 
 
 ### **Sealed Classes**
