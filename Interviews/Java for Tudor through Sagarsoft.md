@@ -14,8 +14,8 @@
 
 #### Functional Interface
 - contains one and **only one abstract method**
-- can contain many default methods
-- can contain many static methods
+- can contain many default methods -> introduced in Java 8
+- can contain many static methods -> introduced in Java 8
 - Annotation -> @FunctionalInterface
 - used in Lambda Functions -> only 1 function is allowed in lambda
 - 
