@@ -12,6 +12,15 @@
 - [ ] Class and objects
 
 
+#### Functional Interface
+- contains one and **only one abstract method**
+- can contain many default methods
+- can contain many static methods
+- Annotation -> @FunctionalInterface
+- used in Lambda Functions -> only 1 function is allowed in lambda
+- 
+
+
 # **Phase 1: Java 8 (1 week)**
 This is the most important jump.
 
