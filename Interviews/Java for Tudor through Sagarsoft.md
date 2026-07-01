@@ -66,6 +66,15 @@ Most modern Java code uses Streams heavily.
 
 
 
+## JShell
+- Similar to IDLE of Python and REPL of Javascript
+- Line by line code can be executed in Java
+
+
+![image.png](/.eraser/lYktFLUGAL62AqrW6S1t___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___image_q9BFVWR_7jrm2GUcGZGRM.png "image.png")
+
+
+
 
 
 # **Phase 2: Java 9–17 (2 weeks)**
