@@ -57,6 +57,17 @@ Most modern Java code uses Streams heavily.
 
 
 
+## Base64 encoding and decoding
+1. Base64 is an encoding scheme that converts binary data into text format so that encoded textual  data can be easily transported over network un-corrupted and without any data loss.
+2. The basic encoding means no line feeds are added to the output and the output is mapped to a set of characters in A-Za-z0-9+/
+
+
+![image.png](/.eraser/lYktFLUGAL62AqrW6S1t___bPZQNaXvlNf0VqwMkPQWuX4sdKb2___image_VjYVriqm95iXbpeWS_13M.png "image.png")
+
+
+
+
+
 # **Phase 2: Java 9–17 (2 weeks)**
 Focus on:
 
